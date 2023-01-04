@@ -22,7 +22,7 @@ export class SpecificationsRepositoryInMemory implements ISpecificationsReposito
   async findByIds(ids: string[]): Promise<Specification[]> {
 
     const allSpecifications = this.specifications.filter((specification) => {
-      ids.includes(specification.id);
+      return ids.includes(specification.id);
     })
     return allSpecifications;
   }
